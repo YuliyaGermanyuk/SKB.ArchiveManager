@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SKB.ArchiveManager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BaseName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DV_SKB_WorkBase</Value>
+    </Setting>
+    <Setting Name="AccessMatrixPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SkinName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DevExpress Style</Value>
+    </Setting>
+    <Setting Name="FormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">800, 600</Value>
+    </Setting>
+    <Setting Name="FormState" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="CardRightsSheet" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CardRights</Value>
+    </Setting>
+    <Setting Name="FolderRightsSheet" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">FolderRights</Value>
+    </Setting>
+    <Setting Name="AdminGroup" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DV Admins</Value>
+    </Setting>
+    <Setting Name="ServerName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DV5</Value>
+    </Setting>
+    <Setting Name="FolderForFixPath" Type="System.Guid" Scope="Application">
+      <Value Profile="(Default)">f8e019a9-3f76-4da2-886a-b555faba70ea</Value>
+    </Setting>
+    <Setting Name="FolderForMarketingFiles" Type="System.Guid" Scope="Application">
+      <Value Profile="(Default)">8f0089f8-e20a-4562-bb40-fe86e00c9cde</Value>
+    </Setting>
+    <Setting Name="DomainName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RKIT</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

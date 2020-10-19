@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{050E43CB-4C9D-4D10-A5A7-BEE038A05F4D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SKB.ArchiveManager</RootNamespace>
+    <AssemblyName>SKB.ArchiveManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>опубликовать\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ArchiveManager.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.72.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\ClosedXML\v4.0_0.72.0.0__fd1eb21b62ae805b\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\Components\DevExpress.Data.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\Components\DevExpress.Printing.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\Components\DevExpress.Utils.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\Components\DevExpress.XtraBars.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\Components\DevExpress.XtraEditors.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\Components\DevExpress.XtraGrid.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\Components\DevExpress.XtraLayout.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\Components\DevExpress.XtraTreeList.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\Components\DevExpress.XtraVerticalGrid.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.BackOffice.ObjectModel, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\DocsVision\5.0\Client\BaseObjects\DocsVision.BackOffice.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.BackOffice.WinForms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\DocsVision\5.0\Client\BaseObjects\DocsVision.BackOffice.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.Platform, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\DocsVision\5.0\Client\DocsVision.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.Platform.CardHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\DocsVision\5.0\Client\DocsVision.Platform.CardHost.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.Platform.CardLib, Version=4.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DocsVision\5.0\Client\DocsVision.Platform.CardLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocsVision.Platform.Extensibility, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\DocsVision.Platform.Extensibility.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.Platform.ObjectManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\DocsVision\5.0\Client\DocsVision.Platform.ObjectManager.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.Platform.ObjectModel, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\DocsVision\5.0\Client\DocsVision.Platform.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.TakeOffice.CardLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\DocsVision\5.0\Client\TakeOffice\DocsVision.TakeOffice.CardLib.dll</HintPath>
+    </Reference>
+    <Reference Include="RKIT.MyCollectionControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=056c028e41d2c8b0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\RKIT.MyCollectionControl.dll</HintPath>
+    </Reference>
+    <Reference Include="RKIT.MyFilesList, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9bff3a8de42b5484, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\RKIT.MyFilesList.dll</HintPath>
+    </Reference>
+    <Reference Include="RKIT.MyMessageBox, Version=1.0.0.0, Culture=neutral, PublicKeyToken=558c3ff950c51409, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Docsvision\5.0\Client\RKIT.MyMessageBox.dll</HintPath>
+    </Reference>
+    <Reference Include="SKB.Archive, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d25190d529e4cf7d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\DocsVision\5.0\Client\SKB.Archive.dll</HintPath>
+    </Reference>
+    <Reference Include="SKB.Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d25190d529e4cf7d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\DocsVision\5.0\Client\SKB.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicableError.cs" />
+    <Compile Include="DocumentsFolder.cs" />
+    <Compile Include="FoundFile.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Unrelated.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\app.config" />
+    <None Include="Properties\DataSources\FoundFile.datasource" />
+    <None Include="Properties\DataSources\SKB.Base.AssignRights.TargetObject.datasource" />
+    <None Include="Properties\DataSources\Unrelated.datasource" />
+    <None Include="Properties\NLog.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ArchiveManager.ico" />
+    <None Include="Resources\AddGroup.ico" />
+    <None Include="Resources\AddFolder.ico" />
+    <None Include="Resources\AddCategory.ico" />
+    <None Include="Resources\RefreshMatrix.ico" />
+    <None Include="Resources\UnexpandAll.ico" />
+    <None Include="Resources\UncheckAll.ico" />
+    <None Include="Resources\ExpandAll.ico" />
+    <None Include="Resources\CheckAll.ico" />
+    <None Include="Resources\SetCategory.ico" />
+    <None Include="Resources\FindMatch.ico" />
+    <None Include="Resources\FindFolder.ico" />
+    <None Include="Resources\FindDoc.ico" />
+    <None Include="Resources\SetNoUnreadCards.ico" />
+    <None Include="Resources\UploadFiles.ico" />
+    <None Include="Resources\Save.ico" />
+    <None Include="Resources\Replace.ico" />
+    <None Include="Resources\Check.ico" />
+    <None Include="Resources\DeleteTest.ico" />
+    <None Include="Resources\Clean.ico" />
+    <None Include="Resources\Analize.ico" />
+    <None Include="Resources\SetRightsToFolders.ico" />
+    <None Include="Resources\SetRightsToCards.ico" />
+    <None Include="Resources\CheckGoups.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

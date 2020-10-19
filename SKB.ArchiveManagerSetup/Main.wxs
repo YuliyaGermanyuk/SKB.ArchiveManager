@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define Preffix = "SKB."?>
+  <?define ProductName = "ArchiveManager"?>
+  <?define ProductVersion = "2.4"?>
+  <?define ProductCode = "D652C6A7-0D18-44A8-A2B7-266BCF1B04AF"?>
+  <?define UpgradeCode = "51383383-13E8-490A-B72A-C9EC097AE07C"?>
+  <?define Manufacturer = "Rkit Group"?>
+  <?define FilesPath = "C:\Users\Germanyuk\Desktop\Проекты\Утилита Архивариуса\13.05.16 dv5\2 - Исходный код\SKB.ArchiveManager\SKB.ArchiveManager\bin\Debug\"?>
+  
+  <Product Id="$(var.ProductCode)" Name="$(var.ProductName)" Language="1049" Version="$(var.ProductVersion)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="$(var.ProductName)" Level="1">
+      <ComponentGroupRef Id="ProductComponents"/>
+      <ComponentRef Id="ApplicationShortcut"/>
+		</Feature>
+    
+    <!-- Диалог при установке -->
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" ></Property>
+    <UI>
+      <UIRef Id="WixUI_InstallDir" />
+      <!-- Пропус диалога с лицензией -->
+      <Publish Dialog="WelcomeDlg"
+               Control="Next"
+               Event="NewDialog"
+               Value="InstallDirDlg"
+               Order="2"> 1
+      </Publish>
+      <Publish Dialog="InstallDirDlg"
+               Control="Back"
+               Event="NewDialog"
+               Value="WelcomeDlg"
+               Order="2"> 1
+      </Publish>
+    </UI>
+  
+    <!-- Иконки -->
+    <Icon Id="icon.ico" SourceFile="Icons\ArchiveManager.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+  
+	</Product>
+
+  <!-- Папки -->
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLLOCATION" Name="$(var.ProductName)">
+          <Directory Id="Ru" Name="ru"/>
+        </Directory>
+			</Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="$(var.ProductName)" />
+      </Directory>
+		</Directory>
+	</Fragment>
+
+  <!-- Компоненты файлов -->
+	<Fragment>
+		<DirectoryRef Id="INSTALLLOCATION">
+      <!--<Component Id="SystemDlls" Guid="23A3B899-0270-4DBB-B306-AAD605C846E7" DiskId='1'>
+        <File Id='SystemDll' Source='$(var.FilesPath)System.dll'/>
+        <File Id='SystemDataDll' Source='$(var.FilesPath)System.Data.dll'/>
+        <File Id='SystemDeploymentDll' Source='$(var.FilesPath)System.Deployment.dll'/>
+        <File Id='SystemDrawingDll' Source='$(var.FilesPath)System.Drawing.dll'/>
+        <File Id='SystemWindowsFormsDll' Source='$(var.FilesPath)System.Windows.Forms.dll'/>
+        <File Id='SystemXmlDll' Source='$(var.FilesPath)System.Xml.dll'/>
+        <File Id='WindowsBaseDll' Source='$(var.FilesPath)WindowsBase.dll'/>
+      </Component> -->
+      <Component Id="DevExpressDlls" Guid="226D49ED-E944-4BFD-A51F-69DD26B84AF7" DiskId='1'>
+        <File Id='DevExpressDataDll' Source='$(var.FilesPath)DevExpress.Data.v13.2.dll'/>
+        <File Id='DevExpressUtilsDll' Source='$(var.FilesPath)DevExpress.Utils.v13.2.dll'/>
+        <File Id='DevExpressXtraBarsDll' Source='$(var.FilesPath)DevExpress.XtraBars.v13.2.dll'/>
+        <File Id='DevExpressXtraEditorsDll' Source='$(var.FilesPath)DevExpress.XtraEditors.v13.2.dll'/>
+        <File Id='DevExpressXtraGridDll' Source='$(var.FilesPath)DevExpress.XtraGrid.v13.2.dll'/>
+        <File Id='DevExpressXtraLayoutDll' Source='$(var.FilesPath)DevExpress.XtraLayout.v13.2.dll'/>
+        <File Id='DevExpressXtraTreeListDll' Source='$(var.FilesPath)DevExpress.XtraTreeList.v13.2.dll'/>
+      </Component>
+      <!--<Component Id="DocsVisionDlls" Guid="E350EE1C-D539-4B7D-A309-6F00C9CE17F0" DiskId='1'>
+        <File Id='DocsVisionBackOfficeObjectModelDll' Source='$(var.FilesPath)DocsVision.BackOffice.ObjectModel.dll'/>
+        <File Id='DocsVisionBackOfficeWinFormsDll' Source='$(var.FilesPath)DocsVision.BackOffice.WinForms.dll'/>
+        <File Id='DocsVisionBackOfficeXmlSchemasDll' Source='$(var.FilesPath)DocsVision.BackOffice.Xml.Schemas.dll'/>
+        <File Id='DocsVisionBackOfficeXmlSchemasXmlSerializersDll' Source='$(var.FilesPath)DocsVision.BackOffice.Xml.Schemas.XmlSerializers.dll'/>
+        <File Id='DocsVisionPlatformDll' Source='$(var.FilesPath)DocsVision.Platform.dll'/>
+        <File Id='DocsVisionPlatformCardHostDll' Source='$(var.FilesPath)DocsVision.Platform.CardHost.dll'/>
+        <File Id='DocsVisionPlatformCardLibDll' Source='$(var.FilesPath)DocsVision.Platform.CardLib.dll'/>
+        <File Id='DocsVisionPlatformExtensibilityDll' Source='$(var.FilesPath)DocsVision.Platform.Extensibility.dll'/>
+        <File Id='DocsVisionPlatformObjectManagerDll' Source='$(var.FilesPath)DocsVision.Platform.ObjectManager.dll'/>
+        <File Id='DocsVisionPlatformObjectManagerInteropDll' Source='$(var.FilesPath)DocsVision.Platform.ObjectManager.Interop.dll'/>
+        <File Id='DocsVisionPlatformObjectModelDll' Source='$(var.FilesPath)DocsVision.Platform.ObjectModel.dll'/>
+        <File Id='DocsVisionPlatformStorageServerDll' Source='$(var.FilesPath)DocsVision.Platform.StorageServer.dll'/>
+        <File Id='DocsVisionPlatformSystemCardsObjectModelDll' Source='$(var.FilesPath)DocsVision.Platform.SystemCards.ObjectModel.dll'/>
+        <File Id='DocsVisionPlatformSystemObjectsDll' Source='$(var.FilesPath)DocsVision.Platform.SystemObjects.dll'/>
+        <File Id='DocsVisionPlatformWinFormsDll' Source='$(var.FilesPath)DocsVision.Platform.WinForms.dll'/>-->
+        <!--<File Id='DocsVisionPlatformWinFormsSystemDialogs.dll' Source='$(var.FilesPath)DocsVision.Platform.WinForms.SystemDialogs.dll'/>
+        <File Id='DocsVisionPlatformXmlSchemasV2Dll' Source='$(var.FilesPath)DocsVision.Platform.Xml.Schemas.V2.dll'/>
+        <File Id='DocsVisionPlatformXmlSchemasV2XmlSerializersDll' Source='$(var.FilesPath)DocsVision.Platform.Xml.Schemas.V2.XmlSerializers.dll'/>
+        <File Id='DocsVisionTakeOfficeCardLibDll' Source='$(var.FilesPath)DocsVision.TakeOffice.CardLib.dll'/>
+        <File Id='DocsVisionWorkflowInterfacesDll' Source='$(var.FilesPath)DocsVision.Workflow.Interfaces.dll'/>
+        <File Id='DocsVisionWorkflowObjectsDll' Source='$(var.FilesPath)DocsVision.Workflow.Objects.dll'/>
+      </Component> -->
+      <!--<Component Id="MyDlls" Guid="30568329-BA65-40CE-BFD5-A744DC0436D1" DiskId='1'>
+        <File Id='RKITMyCollectionControlDll' Source='$(var.FilesPath)RKIT.MyCollectionControl.dll'/>
+        <File Id='RKITMyMessageBoxDll' Source='$(var.FilesPath)RKIT.MyMessageBox.dll'/>
+        <File Id='SKBBaseDll' Source='$(var.FilesPath)SKB.Base.dll'/>
+        <File Id='SKBArchiveDll' Source='$(var.FilesPath)SKB.Archive.dll'/>
+      </Component> -->
+      <!--<Component Id="AnotherDlls" Guid="8294EE6E-C7CD-4136-9518-96DB2D38BE70" DiskId='1'>
+        <File Id='ClosedXMLDll' Source='$(var.FilesPath)ClosedXML.dll'/>
+        <File Id='DocumentFormatOpenXmlDll' Source='$(var.FilesPath)DocumentFormat.OpenXml.dll'/>
+      </Component>-->
+      <Component Id="ArchiveManager" Guid="D0901519-3E44-42A6-8BB3-34860B2ADB7D" DiskId='1'>
+        <File Id='ArchiveManagerExe' Source='$(var.FilesPath)SKB.ArchiveManager.exe'/>
+        <File Id='ArchiveManagerConfig' Source='$(var.FilesPath)SKB.ArchiveManager.exe.config'/>
+        <!--<File Id='AccessMatrixXlsx' Source='$(var.FilesPath)AccessMatrix.xlsx'/>-->
+        <RemoveFolder Id="INSTALLLOCATION" On="uninstall"/>
+      </Component> 
+		</DirectoryRef>
+    <!--<DirectoryRef Id="Ru">
+      <Component Id="DocsVisionRuDlls" Guid="C0073E99-0AE8-4833-8D92-516541ADC6E5" DiskId='1'>
+        File Id='DocsVisionBackOfficeObjectModelresourcesDll' Source='$(var.FilesPath)ru\DocsVision.BackOffice.ObjectModel.resources.dll'/>
+        <File Id='DocsVisionBackOfficeWinFormsresourcesDll' Source='$(var.FilesPath)ru\DocsVision.BackOffice.WinForms.resources.dll'/>
+        <File Id='DocsVisionPlatformCardHostresourcesDll' Source='$(var.FilesPath)ru\DocsVision.Platform.CardHost.resources.dll'/>
+        <File Id='DocsVisionWorkflowObjectsresourcesDll' Source='$(var.FilesPath)ru\DocsVision.Workflow.Objects.resources.dll'/>
+        <RemoveFolder Id="Ru" On="uninstall"/>
+      </Component> 
+    </DirectoryRef>-->
+	</Fragment>
+  
+  <!-- Группа компонентов -->
+  <Fragment>
+    <ComponentGroup Id="ProductComponents">
+      <!--<ComponentRef Id="SystemDlls"/>
+      <ComponentRef Id="DevExpressDlls"/>
+      <ComponentRef Id="DocsVisionDlls"/>
+      <ComponentRef Id="DocsVisionRuDlls"/>
+      <ComponentRef Id="MyDlls"/>
+      <ComponentRef Id="AnotherDlls"/>-->
+      <ComponentRef Id="ArchiveManager"/>
+      <ComponentRef Id="DevExpressDlls"/>
+    </ComponentGroup>
+  </Fragment>
+  
+  <!-- Ярлык в меню пуск -->
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="64417C7F-1571-4644-A7A9-B114A3B16120">
+        <Shortcut Id="ShortcutProduct"
+          Name="$(var.ProductName)"
+          Description="Утилита архивариуса."
+          Target="[INSTALLLOCATION]$(var.Preffix)$(var.ProductName).exe"
+          WorkingDirectory="INSTALLLOCATION"/>
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\$(var.Manufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  
+<!-- Изменение реестра для Excel -->
+  <!--<Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ExcelBrowseOn" Guid="DDF81AF8-E723-4113-AB8A-FF9964CB9352" NeverOverwrite="yes" Permanent="yes">
+        <RegistryValue Root="HKLM" Key="Software\Classes\Excel.Sheet.8" Name="BrowserFlags" Type="integer" Value="1"/>
+        <RegistryValue Root="HKLM" Key="Software\Classes\Excel.Sheet.12" Name="BrowserFlags" Type="integer" Value="1"/>
+        <RegistryValue Root="HKLM" Key="Software\Classes\Excel.SheetBinaryMacroEnabled.12" Name="BrowserFlags" Type="integer" Value="1"/>
+        <RegistryValue Root="HKLM" Key="Software\Classes\Excel.SheetMacroEnabled.12" Name="BrowserFlags" Type="integer" Value="1"/>
+      </Component>
+    </DirectoryRef>
+    <CustomAction Id="OnUnistallAction">
+    </CustomAction>
+  </Fragment>-->
+
+  <!--Изначально BrowserFlags 8-->
+</Wix>
